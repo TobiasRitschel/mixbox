@@ -1,32 +1,10 @@
-# jemdoc: menu{MENU}{index.html}, showsource, analytics{UA-126705648-1}
-= Tobias Kasper Skovborg Ritschel
+# jemdoc: menu{MENU}{index.html}, showsource
+= Mixture Approximation Toolbox (mixbox)
+This website is under development
 
-~~~
-{}{img_left}{./tksr.jpg}{}{141}{188}{}
-Tobias K. S. Ritschel\n
-Assistant Professor (Tenure Track)\n\n
-Department of Applied Mathematics and Computer Science\n
-Technical University of Denmark\n
-DK-2800 Kgs. Lyngby\n
-Denmark\n\n
-ORCID: [https://orcid.org/0000-0002-5843-240X 0000-0002-5843-240X]
-~~~
+== Overview
 
-== Address and contact details
-Tobias K. S. Ritschel\n
-DTU Compute -- Department of Applied Mathematics and Computer Science\n
-Technical University of Denmark\n
-
-Building 303B, office 052\n
-Matematiktorvet\n
-DK-2800 Kgs. Lyngby\n
-Denmark\n
-
-Phone:  [tel:+4545253315 \+45 4525 3315]\n
-Mobile: [tel:+4560621486 \+45 6062 1486]\n
-E-mail: [mailto:tobk@dtu.dk tobk@dtu.dk]\n
-
-== Core competences
+== Open issues
 */Algorithms/*:\n
 Stochastic adaptive control | Model predictive control | Optimal control | Maximum likelihood estimation | State estimation | Model order reduction | Numerical optimization | Numerical simulation
 
@@ -39,20 +17,16 @@ Chemical reaction processes (power-to-X) | Nuclear power | Demand-side flexibili
 */Programming/*:\n
 Matlab | C\/C\+\+ | Python | Java | Android | C\# | High-performance/parallel computing (MPI)
 
-== Public profiles
-- [https://orbit.dtu.dk/en/persons/tobias-kasper-skovborg-ritschel DTU Orbit]
-- [https://dk.linkedin.com/in/tobiasritschel LinkedIn]
-- [https://scholar.google.com/citations?user=ra88UJYAAAAJ&hl=en Google Scholar]
-- [https://www.researchgate.net/profile/Tobias_Ritschel ResearchGate]
-- [https://arxiv.org/a/ritschel_t_1.html arXiv]
-- [https://www.growkudos.com/profile/tobias_k._s._ritschel Kudos]
-- [https://github.com/TobiasRitschel Github]
-- [https://orcid.org/0000-0002-5843-240X ORCID]
-- [https://www.webofscience.com/wos/author/record/A-8267-2018 Web of Science]
-#- [http://www.researcherid.com/rid/A-8267-2018 ResearcherID]
-#- [https://www.scopus.com/authid/detail.uri?authorId=57196097177 Scopus]
-#- [https://www.mendeley.com/profiles/tobias-k-s-ritschel/ Mendeley]
-#- [http://forskningsdatabasen.dk/en/catalog/2397986061 Danish National Research Database]
-#
-#== Websites
-#- [http://psetools.org/ PSE Tools]
+== Contact information
+Tobias K. S. Ritschel\n
+Department of Applied Mathematics and Computer Science\n
+Technical University of Denmark\n
+
+Building 303B, office 052\n
+Matematiktorvet\n
+DK-2800 Kgs. Lyngby\n
+Denmark\n
+
+Phone:  [tel:+4545253315 \+45 4525 3315]\n
+Mobile: [tel:+4560621486 \+45 6062 1486]\n
+E-mail: [mailto:tobk@dtu.dk tobk@dtu.dk]\n
