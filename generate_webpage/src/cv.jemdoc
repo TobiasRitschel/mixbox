@@ -1,0 +1,84 @@
+# jemdoc: menu{MENU}{cv.html}, analytics{UA-126705648-1}
+= Curriculum Vitae --- Tobias K. S. Ritschel
+
+== Personal information
+:{*Name*} Tobias Kasper Skovborg Ritschel
+:{*Nationality*} Danish
+:{*Date of birth*} July 30th, 1991
+:{*Gender*} Male
+
+== Employment
+:{*2022--present*: Assistant Professor (tenure track)}
+[https://www.compute.dtu.dk/ Department of Applied Mathematics and Computer Science, Technical University of Denmark]
+:{*2021--2022*: Postdoctoral Researcher}
+[https://www.compute.dtu.dk/ Department of Applied Mathematics and Computer Science, Technical University of Denmark]
+:{*2020--2021*: Postdoctoral Researcher}
+[https://www.mpi-magdeburg.mpg.de/ Max Planck Institute for Dynamics of Complex Technical Systems]
+:{*2019*: Scientific Computing Engineer}
+[http://www.2-control.dk 2-control ApS]
+
+== Research projects (15)
+[https://ai-effect.eu/ AI-EFFECT] (task leader) - Artificial Intelligence Experimentation Facility for the Energy Sector\n
+[https://www.energycluster.dk/en/cansi/ CANSI] (contribute research) - Cross Atlantic Network on System Integration\n
+[https://energycluster.dk/en/projects/pwtm-flex PWtM-Flex] (principal investigator) - Flexible operation of plastic waste-to-methanol plants using next-generation electrolyzers\n
+[https://inno-ccus.dk/project/green-twins-data-driven-digital-twin-platform-to-reduce-co2-in-industrial-processes/ GreenTwins] (supervise PhD candidate)\n
+[https://missiongreenfuels.dk/ptx-markets/ PtXMarkets] (supervise PhD candidate)\n
+[https://missiongreenfuels.dk/ptx-sector-coupling-and-lca/ PtX Sector Coupling and LCA] (supervise PhD candidate)\n
+[https://www.synikia.eu/ syn.ikia] (contribute research)\n
+[https://www.elexia-project.eu/deliverables-publications ELEXIA] (contribute research and supervise PhD candidate)\n
+[https://cleancluster.dk/project/ptx-risoe/ PtX Risø] project with SemperCycle ApS (contribute research and supervise PostDoc)\n
+[https://www.reliablade.com/ ReliaBlade] (supervise PostDoc)\n
+[https://www.flexibleenergydenmark.com/ Flexible Energy Denmark]\n
+[https://adapt-t2d.dk/ ADAPT-T2D] (PostDoc) - Adherence through Cloud-based Personalized Treatment for Type 2 Diabetes\n
+[https://konsens.github.io/ KONSENS] (PostDoc) - Konsistente Optimierung und Stabilisierung Elektrischer Netzwerksysteme/Consistent Optimization and Stabilization of Electrical Power Grids\n
+[https://www.cocop-spire.eu/ COCOP] (Scientific Computing Engineer) - Coordinating Optimisation of Complex Industrial Processes\n
+[https://energiforskning.dk/en/node/15099 OPTION] (PhD Student) - Optimizing Oil Production by Novel Technology Integration
+
+== Organizational appointments and volunteering 
+Associate Editor for the 10th IEEE International Conference on Control, Decision and Information Technologies, 2024 (CoDIT'24)\n
+Co-chair of the regular session on Delay Systems (WeC1), European Control Conference, 2025 (ECC'25)\n
+Co-chair of the regular session on Computational Methods in Control (FrB1), European Control Conference, 2023 (ECC'23)\n
+Volunteer at the 2nd IEEE Conference on Control Technology and Applications, 2018 (CCTA'18)
+
+== Review activities (51)
+SIAM Journal on Control and Optimization: 1 review\n # Latest: M154347 (2023-03-11)
+IEEE Transactions on Automatic Control (TAC): 4 reviews\n # Latest: 25-1099.1, 24-1948.2, 23-2291.1, 23-0561.1
+IEEE Transactions on Control Systems Technology (TCST): 6 reviews\n # Latest: 25-0190.2, 24-1017.1, 24-0125.2, 24-0125.1, 24-0129.2, 23-0583.1
+IEEE Transactions on Smart Grid (TSG): 1 review\n # Latest: TSG00531-2025
+IEEE Control Systems Letters (L-CSS): 2 reviews\n # Latest: 22-0161.2
+European Journal of Control (Elsevier): 1 review\n # Latest: EJCON-D-24-00618
+IFAC Journal of Systems and Control (Elsevier): 2 reviews\n # Latest: IFACSC-D-25-00307, IFACSC-D-25-00179
+Results in Control and Optimization (Elsevier): 1 review\n # Latest: RICO-D-23-00349
+Computational and Applied Mathematics (Springer): 1 review\n
+Applied Mathematics and Computation (Elsevier): 2 reviews\n
+Communications in Nonlinear Science and Numerical Simulation (Elsevier): 1 review\n # Latest: CNSNS-D-23-00974
+Nonautonomous Dynamical Systems (De Gruyter): 1 review\n # Latest: MSDS-D-24-000001
+Computers and Electronics in Agriculture (Elsevier): 3 reviews\n
+SPE Journal: 1 review\n
+IEEE Control Systems Society (CSS) Conferences: 4 reviews\n # 0024 CCTA'24, 1459 CDC'22
+IFAC Conferences: 11 reviews\n # Latest: DYCOPS 78, 1735 IFAC WC 2023
+European Control Conference (ECC): 9 reviews # Latest: 336, 537 ECC'25, 337, 798, 820 ECC'24
+
+== Other activities
+Moderator of the PhD defense of Zhanhao Zhang, September 16, 2024.\n
+Moderator of the PhD defense of Marcus Krogh Nielsen, June 23, 2023.\n
+Moderator of the PhD defense of Christian Thilker Ankerstjerne, June 22, 2023.\n
+Moderator of the PhD defense of Hjörleifur G. Bergsteinsson, April 18, 2023.\n
+Moderator of the PhD defense of Maksim Mazuryn, January 30, 2023.
+
+== Education
+: {*2015--2018*: [https://www.compute.dtu.dk/education/phd-school PhD in Applied Mathematics]}
+Department of Applied Mathematics and Computer Science, Technical University of Denmark\n
+PhD Thesis: [http://orbit.dtu.dk/en/publications/nonlinear-model-predictive-control-for-oil-reservoirs(bc7cbeb1-b3d6-4e8d-8185-22e61802747f).html Nonlinear Model Predictive Control for Oil Reservoirs]
+
+:{*2013--2015*: [https://www.dtu.dk/english/education/graduate/msc-programmes/mathematical-modelling-and-computation MSc in Mathematical Modeling and Computation]}
+Technical University of Denmark\n
+MSc Thesis: [http://findit.dtu.dk/en/catalog/2292735808 High-Performance Computing for PDE Constrained Optimization in Oil Reservoirs Management]
+
+:{*2010--2013*: [https://www.dtu.dk/english/education/undergraduate/undergraduate-programmes-in-danish/bsc-eng-programmes/applied-mathematics BSc in Mathematics and Technology]}
+Technical University of Denmark\n
+BSc Thesis: [http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6607 Numerical Methods For Solution of Differential Equations]
+
+:{*2007--2010*: Technical High School}
+Frederiksberg Technical High School\n
+A-level in mathematics and physics

@@ -1,0 +1,21 @@
+# jemdoc: menu{MENU}{code_snippets.html}, showsource, analytics{UA-126705648-1}
+= Code snippets
+
+Here, you can find Matlab code snippets (minimal working examples or MWEs) that can help you get started with nonlinear model-based control. Please see [https://github.com/TobiasRitschel my Github page] for more useful snippets.
+
+== Links to algorithms
+[https://github.com/TobiasRitschel/separatrix_sensitivity/tree/master Numerical computation of separatrix sensitivities]
+
+== Links to minimal working examples (MWEs)
+[https://github.com/TobiasRitschel/mwe_optimal_control Nonlinear numerical optimal control (using fmincon)]\n
+[https://github.com/TobiasRitschel/mwe_dynamical_optimization Nonlinear numerical dynamical optimization (using fmincon)]\n
+[https://github.com/TobiasRitschel/mwe_parameter_estimation Nonlinear dynamical least-squares parameter estimation (using fmincon)]\n
+#[https://github.com/TobiasRitschel/extremum_seeking_control Extremum seeking control]\n
+[https://github.com/TobiasRitschel/FiniteDifferenceTool Finite difference test of first and second order derivatives]
+
+== Links to models
+[https://github.com/TobiasRitschel/heat_exchanger_model Heat exchanger model]
+
+== Links to figures
+[https://github.com/TobiasRitschel/SqueezeAndShift/blob/main/squeezeAndShift.m Squeeze and shift concept]\n
+[https://github.com/TobiasRitschel/stochastic_adaptive_control_motivation/blob/master/bin/compare_adaptive_and_static_stochastic_control.m Motivation for stochastic adaptive control]
