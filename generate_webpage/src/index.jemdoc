@@ -1,21 +1,11 @@
 # jemdoc: menu{MENU}{index.html}, showsource
 = Mixture Approximation Toolbox (mixbox)
+
 This website is under development
 
 == Overview
 
 == Open issues
-*/Algorithms/*:\n
-Stochastic adaptive control | Model predictive control | Optimal control | Maximum likelihood estimation | State estimation | Model order reduction | Numerical optimization | Numerical simulation
-
-*/Mathematical modeling/*:\n
-Stochastic differential equations | Delay differential equations | Partial differential equations | Differential-algebraic equations | Ordinary differential equations
-
-*/Applications/*:\n
-Chemical reaction processes (power-to-X) | Nuclear power | Demand-side flexibility | Power grids | Phase equilibrium processes and flow in porous media (CO2 storage, oil & gas, geothermal energy) | Bioreactors | Epidemiology | Diabetes
-
-*/Programming/*:\n
-Matlab | C\/C\+\+ | Python | Java | Android | C\# | High-performance/parallel computing (MPI)
 
 == Contact information
 Tobias K. S. Ritschel\n
