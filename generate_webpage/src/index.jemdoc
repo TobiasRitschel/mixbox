@@ -1,7 +1,7 @@
 # jemdoc: menu{MENU}{index.html}, showsource
 = Mixture Approximation Toolbox (mixbox)
 
-This website is under development.
+Mixture approximations are used to approximate $L^1(\mathcal D)$ functions, $\alpha: \mathcal D \rightarrow \mathbb R_{\geq 0}$.
 
 == Overview
 
