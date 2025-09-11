@@ -5,6 +5,7 @@ USER 		= tksr
 MAKEFILE  	= ./makefile
 SOURCEDIR 	= ./src
 HTMLDIR   	= ./html
+EQDIR       = ./eqs
 SOURCE 		= $(wildcard $(SOURCEDIR)/*.jemdoc)
 TARGET 		= $(addprefix $(HTMLDIR)/, $(notdir $(SOURCE:.jemdoc=.html)))
 STYLE  		= css/jemdoc.css
@@ -20,7 +21,7 @@ WEBSITE 	= \
 all: $(WEBSITE) $(TARGET)
 
 $(WEBSITE): $(TARGET)
-	@cp $(TARGET) $(STYLE) ..
+	@cp -r $(TARGET) $(STYLE) $(EQDIR) ..
 
 $(TARGET): $(STYLE) $(MENU) $(SOURCE) $(MAKEFILE)
 	@jemdoc.py $(SOURCE)
@@ -28,3 +29,5 @@ $(TARGET): $(STYLE) $(MENU) $(SOURCE) $(MAKEFILE)
 
 clean:
 	@rm -f $(HTMLDIR)/*
+	@rm -f $(EQDIR)/*
+	@rm -f $(EQDIR)/.eqsdepthcache
