@@ -30,11 +30,88 @@ MathJax.Hub.Config({
 <div id="toptitle">
 <h1>Mixture Approximation Toolbox (mixbox)</h1>
 </div>
-<p>This website is under development.
+<p>Mixture approximations are used to approximate \(L^1(\mathcal D)\) functions, \(\alpha: \mathcal D \rightarrow R_{\geq 0}\). Typically, the kernel is assumed to be normalized such that
 </p>
-<p>Mixture approximations are used to approximate \(L^1(\mathcal D)\) functions, \(\alpha: \mathcal D \rightarrow R_{\geq 0}\).
+<p style="text-align:center">
+\[
+	\int_{\mathcal D} \alpha(t) \mathrm dt = 1,
+\]
+</p><p>which presumes that the integral of \(\alpha\) over the domain, \(\mathcal D\), is nonzero. In some cases, e.g., if \(\alpha\) is a probability density function, it is required to be non-negative:
+%
 </p>
+<p style="text-align:center">
+\[
+	0 \leq \alpha(t).
+\]
+</p><p>Finally, many convergence results require \(\alpha\) to be continuous. Depending on the domain, there exist the following three basic types of mixture approximations.
+</p>
+<ul>
+<li><p>Gauss mixture approximations: \(\mathcal D = (-\infty, \infty)\)
+</p>
+</li>
+<li><p>Erlang mixture approximations: \(\mathcal D = [0, \infty)\)
+</p>
+</li>
+<li><p>Beta mixure approximations: \(\mathcal D = [a, b]\): 
+</p>
+</li>
+</ul>
 <h2>Overview</h2>
+<p>The toolbox is composed of several GitHub repositories. However, not all functionality is implemented yet. The below list provides an overview of the current status of the toolbox.
+</p>
+<ol>
+<li><p>Identify mixture approximation based on samples of \(\alpha\)
+</p>
+<ol>
+<li><p><a href="https://github.com/TobiasRitschel/mixbox-gauss" target=&ldquo;blank&rdquo;>mixbox-gauss</a> toolbox
+</p>
+</li>
+<li><p><a href="https://github.com/TobiasRitschel/mixbox-erlang" target=&ldquo;blank&rdquo;>mixbox-erlang</a> toolbox
+</p>
+</li>
+<li><p><a href="https://github.com/TobiasRitschel/mixbox-beta" target=&ldquo;blank&rdquo;>mixbox-beta</a> toolbox
+</p>
+</li></ol>
+</li>
+<li><p>Approximate delay differential equations (DDEs) with distributed time delays by ordinary differential equations (ODEs)
+</p>
+<ol>
+<li><p>mixbox-erlang-dde: Not implemented yet.
+</p>
+</li>
+<li><p>mixbox-beta-dde: Not implemented yet.
+</p>
+</li></ol>
+</li>
+<li><p>Approximate the solution to stochastic differential equations (SDEs) with mixture approximations
+</p>
+<ol>
+<li><p>mixbox-gauss-sde: Not implemented yet.
+</p>
+</li>
+<li><p>mixbox-erlang-sde: Not implemented yet.
+</p>
+</li>
+<li><p>mixbox-beta-sde: Not implemented yet.
+</p>
+</li></ol>
+</li>
+<li><p>Approximate the solution to age-structured partial differential equation (PDE) models
+</p>
+<ol>
+<li><p>mixbox-gauss-pde: Not implemented yet.
+</p>
+</li>
+<li><p>mixbox-erlang-pde: Not implemented yet.
+</p>
+</li>
+<li><p>mixbox-beta-pde: Not implemented yet.
+</p>
+</li>
+</ol>
+
+</li>
+</ol>
 <h2>Open problems</h2>
 <h2>Contact information</h2>
 <p>Feel free to reach out regarding questions, ideas, or suggestions for improvements (software or methods) or if you're interested in collaborations.
@@ -54,7 +131,7 @@ E-mail: <a href="mailto:tobk@dtu.dk" target=&ldquo;blank&rdquo;>tobk@dtu.dk</a><
 </p>
 <div id="footer">
 <div id="footer-text">
-Page generated 2025-09-24 16:43:53 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+Page generated 2025-09-24 21:08:03 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
 (<a href="./src/index.jemdoc">source</a>)
 </div>
 </div>

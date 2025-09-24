@@ -1,11 +1,38 @@
-# jemdoc: menu{MENU}{index.html}, showsource, eqsize{600}
+# jemdoc: menu{MENU}{index.html}, showsource
 = Mixture Approximation Toolbox (mixbox)
 
-This website is under development.
-
-Mixture approximations are used to approximate $L^1(\mathcal D)$ functions, $\alpha: \mathcal D \rightarrow R_{\geq 0}$.
+Mixture approximations are used to approximate $L^1(\mathcal D)$ functions, $\alpha: \mathcal D \rightarrow R_{\geq 0}$. Typically, the kernel is assumed to be normalized such that
+\(
+	\int_{\mathcal D} \alpha(t) \mathrm dt = 1,
+\)
+which presumes that the integral of $\alpha$ over the domain, $\mathcal D$, is nonzero. In some cases, e.g., if $\alpha$ is a probability density function, it is required to be non-negative:
+%
+\(
+	0 \leq \alpha(t).
+\)
+Finally, many convergence results require $\alpha$ to be continuous. Depending on the domain, there exist the following three basic types of mixture approximations.
+- Gauss mixture approximations: $\mathcal D = (-\infty, \infty)$
+- Erlang mixture approximations: $\mathcal D = [0, \infty)$
+- Beta mixure approximations: $\mathcal D = [a, b]$: 
 
 == Overview
+The toolbox is composed of several GitHub repositories. However, not all functionality is implemented yet. The below list provides an overview of the current status of the toolbox.
+
+. Identify mixture approximation based on samples of $\alpha$
+	.. [https://github.com/TobiasRitschel/mixbox-gauss mixbox-gauss] toolbox
+	.. [https://github.com/TobiasRitschel/mixbox-erlang mixbox-erlang] toolbox
+	.. [https://github.com/TobiasRitschel/mixbox-beta mixbox-beta] toolbox
+. Approximate delay differential equations (DDEs) with distributed time delays by ordinary differential equations (ODEs)
+	.. mixbox-erlang-dde: Not implemented yet.
+	.. mixbox-beta-dde: Not implemented yet.
+. Approximate the solution to stochastic differential equations (SDEs) with mixture approximations
+	.. mixbox-gauss-sde: Not implemented yet.
+	.. mixbox-erlang-sde: Not implemented yet.
+	.. mixbox-beta-sde: Not implemented yet.
+. Approximate the solution to age-structured partial differential equation (PDE) models
+	.. mixbox-gauss-pde: Not implemented yet.
+	.. mixbox-erlang-pde: Not implemented yet.
+	.. mixbox-beta-pde: Not implemented yet.
 
 == Open problems
 
