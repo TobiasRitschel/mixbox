@@ -24,7 +24,7 @@ $(WEBSITE): $(TARGET)
 	@cp -r $(TARGET) $(STYLE) $(EQDIR) ..
 
 $(TARGET): $(STYLE) $(MENU) $(SOURCE) $(MAKEFILE)
-	@jemdoc.py $(SOURCE)
+	@jemdoc.py -c mysite.conf $(SOURCE)
 	@mv $(SOURCEDIR)/*.html $(HTMLDIR)
 
 clean:
