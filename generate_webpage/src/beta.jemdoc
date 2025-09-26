@@ -1,6 +1,12 @@
 # jemdoc: menu{MENU}{beta.html}, showsource
 = Beta mixture approximations
 
-== Theoretical results
+For $\mathcal D = [0, 1]$, the beta basis functions are given by
+\(
+	\ell_m(t) = b_m t^m (1 - t)^{M - m}, \qquad b_m = \frac{(M+1)!}{m! (M-m)!},
+\)
+where $b_m$ is a normalization constant. These basis functions do not contain any hyperparameters.
 
-== References
+#== Theoretical results
+
+#== References

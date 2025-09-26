@@ -1,7 +1,7 @@
 # jemdoc: menu{MENU}{index.html}, showsource
 = Mixture Approximation Toolbox (mixbox)
 
-Mixture approximations are used to approximate $L^1(\mathcal D)$ functions, $\alpha: \mathcal D \rightarrow R_{\geq 0}$. Typically, the kernel is assumed to be normalized such that
+Mixture approximations are used to approximate $L^1(\mathcal D)$ functions, $\alpha: \mathcal D \rightarrow \mathbb R_{\geq 0}$. Typically, the kernel is assumed to be normalized such that
 \(
 	\int_{\mathcal D} \alpha(t) \, \mathrm dt = 1,
 \)
@@ -9,7 +9,19 @@ which presumes that the integral of $\alpha$ over the domain, $\mathcal D$, is n
 \(
 	0 \leq \alpha(t).
 \)
-Finally, many convergence results require $\alpha$ to be continuous. Depending on the domain, there exist the following three basic types of mixture approximations.
+Finally, many convergence results require $\alpha$ to be continuous. A mixture approximation is given by
+\(
+	\hat \alpha(t) = \sum_{m=0}^M c_m \ell_m(t),
+\)
+where $\ell_m: \mathcal D \rightarrow \mathbb R_{\geq 0}$ is the $m$\'th basis function, and $c_m$ is the $m$\'th weight. The basis functions must also be normalized, i.e.,
+\(
+	\int_{\mathcal D} \ell_m(t) \, \mathrm dt = 1,
+\)
+and the coefficients must sum to one:
+\(
+	\sum_{m=0}^M c_m = 1.
+\)
+Depending on the domain, there exist the following three basic types of mixture approximations.
 - [/gauss.html  Gauss mixture approximations]: $\mathcal D = (-\infty, \infty)$
 - [/erlang.html Erlang mixture approximations]: $\mathcal D = [0, \infty)$
 - [/beta.html   Beta mixure approximations]: $\mathcal D = [a, b]$: 

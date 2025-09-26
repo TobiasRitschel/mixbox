@@ -32,7 +32,7 @@ MathJax.Hub.Config({
 <div id="toptitle">
 <h1>Mixture Approximation Toolbox (mixbox)</h1>
 </div>
-<p>Mixture approximations are used to approximate \(L^1(\mathcal D)\) functions, \(\alpha: \mathcal D \rightarrow R_{\geq 0}\). Typically, the kernel is assumed to be normalized such that
+<p>Mixture approximations are used to approximate \(L^1(\mathcal D)\) functions, \(\alpha: \mathcal D \rightarrow \mathbb R_{\geq 0}\). Typically, the kernel is assumed to be normalized such that
 </p>
 <p style="text-align:center">
 \[
@@ -44,7 +44,25 @@ MathJax.Hub.Config({
 \[
 	0 \leq \alpha(t).
 \]
-</p><p>Finally, many convergence results require \(\alpha\) to be continuous. Depending on the domain, there exist the following three basic types of mixture approximations.
+</p><p>Finally, many convergence results require \(\alpha\) to be continuous. A mixture approximation is given by
+</p>
+<p style="text-align:center">
+\[
+	\hat \alpha(t) = \sum_{m=0}^M c_m \ell_m(t),
+\]
+</p><p>where \(\ell_m: \mathcal D \rightarrow \mathbb R_{\geq 0}\) is the \(m\)'th basis function, and \(c_m\) is the \(m\)'th weight. The basis functions must also be normalized, i.e.,
+</p>
+<p style="text-align:center">
+\[
+	\int_{\mathcal D} \ell_m(t) \, \mathrm dt = 1,
+\]
+</p><p>and the coefficients must sum to one:
+</p>
+<p style="text-align:center">
+\[
+	\sum_{m=0}^M c_m = 1.
+\]
+</p><p>Depending on the domain, there exist the following three basic types of mixture approximations.
 </p>
 <ul>
 <li><p><a href="gauss.html">Gauss mixture approximations</a>: \(\mathcal D = (-\infty, \infty)\)
@@ -116,7 +134,7 @@ MathJax.Hub.Config({
 <h2>Open problems</h2>
 <div id="footer">
 <div id="footer-text">
-Page generated 2025-09-25 13:46:59 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+Page generated 2025-09-26 20:39:25 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
 (<a href="./src/index.jemdoc">source</a>)
 </div>
 </div>

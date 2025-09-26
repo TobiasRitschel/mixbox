@@ -1,6 +1,12 @@
 # jemdoc: menu{MENU}{erlang.html}, showsource
 = Erlang mixture approximations
 
-== Theoretical results
+The Erlang basis functions are given by
+\(
+	\ell_m(t) = b_m t^m \exp(-at), \qquad b_m = \frac{a^{m+1}}{m!},
+\)
+where $b_m$ is a normalization factor, and the rate parameter $a$ is a hyperparameter.
 
-== References
+#== Theoretical results
+
+#== References

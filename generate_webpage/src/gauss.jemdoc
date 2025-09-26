@@ -1,6 +1,14 @@
 # jemdoc: menu{MENU}{gauss.html}, showsource
 = Gauss mixture approximations
 
-== Theoretical results
+The Gauss basis functions are given by
+\(
+	\ell_m(t) = b_m \exp\left(-\frac{1}{2}\left(\frac{t - \mu_m}{\sigma_m}\right)^2\right), \qquad b_m = \frac{1}{\sqrt{2 \pi \sigma_m^2}},
+\)
+where $b_m$ is a normalization factor, and the mean $\mu_m$ and the standard deviation $\sigma_m$ are hyperparameters.
 
-== References
+
+#== Theoretical results
+
+#== References
+
