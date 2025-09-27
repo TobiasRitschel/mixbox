@@ -11,7 +11,7 @@ which presumes that the integral of $\alpha$ over the domain, $\mathcal D$, is n
 \)
 Finally, many convergence results require $\alpha$ to be continuous. A mixture approximation is given by
 \(
-	\hat \alpha(t) = \sum_{m=0}^M c_m \ell_m(t),
+	\alpha(t) \approx \hat \alpha(t) = \sum_{m=0}^M c_m \ell_m(t),
 \)
 where $\ell_m: \mathcal D \rightarrow \mathbb R_{\geq 0}$ is the $m$\'th basis function, and $c_m$ is the $m$\'th weight. The basis functions must also be normalized, i.e.,
 \(
