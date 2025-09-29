@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<title>Convolutions</title>
+<!-- MathJax -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async>
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+	  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<!-- End MathJax -->
+</head>
+<body>
+<table summary="Table for page layout." id="tlayout">
+<tr valign="top">
+<td id="layout-menu">
+<div class="menu-category">Mixture approximations</div>
+<div class="menu-item"><a href="index.html">Home</a></div>
+<div class="menu-item"><a href="gauss.html">Gauss&nbsp;approximations</a></div>
+<div class="menu-item"><a href="erlang.html">Erlang&nbsp;approximations</a></div>
+<div class="menu-item"><a href="beta.html">Beta&nbsp;approximations</a></div>
+<div class="menu-category">Static problems</div>
+<div class="menu-item"><a href="convolutions.html" class="current">Convolutions</a></div>
+<div class="menu-category">Contact</div>
+<div class="menu-item"><a href="ritschel.html">Tobias&nbsp;K.&nbsp;S.&nbsp;Ritschel</a></div>
+</td>
+<td id="layout-content">
+<div id="toptitle">
+<h1>Convolutions</h1>
+</div>
+<p><a href="erlang.html" target=&ldquo;blank&rdquo;>Erlang mixture approximations</a> can be used together with the linear chain trick to approximate convolutions in the form
+</p>
+<p style="text-align:center">
+\[
+	z(t) = \int_{-\infty}^t \alpha(t - s) x(s) \, \mathrm ds
+\]
+</p><p>by a set of ordinary differential equations. Substitute the approximation
+</p>
+<p style="text-align:center">
+\[
+	\hat z(t) = \int_{-\infty}^t \hat \alpha(t - s) x(s) \, \mathrm ds = \sum_{m=0}^M c_m \int_{-\infty}^t \ell_m(t - s) x(s) \, \mathrm s = \sum_{m=0}^M c_m z_m(t),
+\]
+</p><p>where we have introduced
+</p>
+<p style="text-align:center">
+\[
+	z_m(t) = \int_{-\infty}^t \ell_m(t - s) x(s) \, \mathrm ds.
+\]
+</p><p>Next, we exploit 1) that \(\ell_0(0) = a\) and \(\ell_m(0) = 0\) for \(m &gt; 0\), and 2) the recursive nature of the derivatives of the Erlang basis functions:
+</p>
+<p style="text-align:center">
+\[
+	\dot \ell_m(t) =
+	\begin{cases}
+		-a \ell_0(t), &amp; m = 0, \\
+		a (\ell_{m-1}(t) - \ell_m(t)), &amp; m &gt; 0.
+	\end{cases}
+\]
+</p><p>We differentiate the expression for \(z_m\) to obtain a set of linear differential equations based on this recursion,
+</p>
+<p style="text-align:center">
+\[
+	\dot z_m(t) = \ell_m(0) x(t) + \int_{-\infty}^t \dot \ell_m(t - s) x(s) \,\mathrm ds =
+	\begin{cases}
+		a (x(t) - z_0(t)), &amp; m = 0, \\
+		a (z_{m-1}(t) - z_m(t)), &amp; m &gt; 0.
+	\end{cases}
+\]
+</p><p>To summarize, the convolution \(z(t_f)\) can be approximated by \(\hat z(t_f)\) given by
+</p>
+<p style="text-align:center">
+\[
+	\hat z(t_f) = \sum_{m=0}^M c_m z_m(t_f),
+\]
+</p><p>where the auxiliary memory states, \(z_m\) for \(m = 0, \ldots, M\), are obtained as the solution to the initial value problem
+</p>
+<p style="text-align:center">
+\[
+	\begin{align*}
+		z_m(t_0) &amp;= \int_{-\infty}^{t_0} \ell_m(t_0 - s) x(s), \\
+		\dot z_0(t) &amp;= a (x(t) - z_0(t)), &amp; t &amp;\in [t_0, t_f], \\
+		\dot z_m(t) &amp;= a (z_{m-1}(t) - z_m(t)), &amp; t &amp;\in [t_0, t_f], &amp; m = 1, \ldots, M.
+	\end{align*}
+\]
+</p><p>This approach is mainly useful if \(x\) is constant in the interval \((-\infty, t_0]\) for some given value of \(t_0\), or if \(z_m(t_0)\) can be evaluated analytically. In particular, this approach is used to approximate delay differential equations by ordinary differential equations.
+</p>
+<div id="footer">
+<div id="footer-text">
+Page generated 2025-09-29 09:10:13 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+(<a href="./src/convolutions.jemdoc">source</a>)
+</div>
+</div>
+</td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,44 @@
+# jemdoc: menu{MENU}{convolutions.html}, showsource
+= Convolutions
+
+[erlang.html Erlang mixture approximations] can be used together with the linear chain trick to approximate convolutions in the form
+\(
+	z(t) = \int_{-\infty}^t \alpha(t - s) x(s) \, \mathrm ds
+\)
+by a set of ordinary differential equations. Substitute the approximation
+\(
+	\hat z(t) = \int_{-\infty}^t \hat \alpha(t - s) x(s) \, \mathrm ds = \sum_{m=0}^M c_m \int_{-\infty}^t \ell_m(t - s) x(s) \, \mathrm s = \sum_{m=0}^M c_m z_m(t),
+\)
+where we have introduced
+\(
+	z_m(t) = \int_{-\infty}^t \ell_m(t - s) x(s) \, \mathrm ds.
+\)
+Next, we exploit 1) that $\ell_0(0) = a$ and $\ell_m(0) = 0$ for $m > 0$, and 2) the recursive nature of the derivatives of the Erlang basis functions:
+\(
+	\dot \ell_m(t) =
+	\begin{cases}
+		-a \ell_0(t), & m = 0, \\
+		a (\ell_{m-1}(t) - \ell_m(t)), & m > 0.
+	\end{cases}
+\)
+We differentiate the expression for $z_m$ to obtain a set of linear differential equations based on this recursion,
+\(
+	\dot z_m(t) = \ell_m(0) x(t) + \int_{-\infty}^t \dot \ell_m(t - s) x(s) \,\mathrm ds =
+	\begin{cases}
+		a (x(t) - z_0(t)), & m = 0, \\
+		a (z_{m-1}(t) - z_m(t)), & m > 0.
+	\end{cases}
+\)
+To summarize, the convolution $z(t_f)$ can be approximated by $\hat z(t_f)$ given by
+\(
+	\hat z(t_f) = \sum_{m=0}^M c_m z_m(t_f),
+\)
+where the auxiliary memory states, $z_m$ for $m = 0, \ldots, M$, are obtained as the solution to the initial value problem
+\(
+	\begin{align*}
+		z_m(t_0) &= \int_{-\infty}^{t_0} \ell_m(t_0 - s) x(s), \\
+		\dot z_0(t) &= a (x(t) - z_0(t)), & t &\in [t_0, t_f], \\
+		\dot z_m(t) &= a (z_{m-1}(t) - z_m(t)), & t &\in [t_0, t_f], & m = 1, \ldots, M.
+	\end{align*}
+\)
+This approach is mainly useful if $x$ is constant in the interval $(-\infty, t_0]$ for some given value of $t_0$, or if $z_m(t_0)$ can be evaluated analytically. In particular, this approach is used to approximate delay differential equations by ordinary differential equations.

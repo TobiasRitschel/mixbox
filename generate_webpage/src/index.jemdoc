@@ -9,7 +9,9 @@ which presumes that the integral of $\alpha$ over the domain, $\mathcal D$, is n
 \(
 	0 \leq \alpha(t).
 \)
-Finally, many convergence results require $\alpha$ to be continuous. A mixture approximation is given by
+Finally, many convergence results require $\alpha$ to be continuous.
+
+A mixture approximation is given by
 \(
 	\alpha(t) \approx \hat \alpha(t) = \sum_{m=0}^M c_m \ell_m(t),
 \)
@@ -45,4 +47,4 @@ The toolbox is composed of several GitHub repositories. However, not all functio
 	.. mixbox-erlang-pde: Not implemented yet.
 	.. mixbox-beta-pde: Not implemented yet.
 
-== Open problems
+#== Open problems
