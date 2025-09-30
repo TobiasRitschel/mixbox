@@ -36,7 +36,7 @@ To summarize, the convolution $z(t_f)$ can be approximated by $\hat z(t_f)$ give
 where the auxiliary memory states, $z_m$ for $m = 0, \ldots, M$, are obtained as the solution to the initial value problem
 \(
 	\begin{align*}
-		z_m(t_0) &= \int_{-\infty}^{t_0} \ell_m(t_0 - s) x(s) \mathrm ds, \\
+		z_m(t_0) &= \int_{-\infty}^{t_0} \ell_m(t_0 - s) x(s) \, \mathrm ds, \\
 		\dot z_0(t) &= a (x(t) - z_0(t)), & t &\in [t_0, t_f], \\
 		\dot z_m(t) &= a (z_{m-1}(t) - z_m(t)), & t &\in [t_0, t_f], & m = 1, \ldots, M.
 	\end{align*}
