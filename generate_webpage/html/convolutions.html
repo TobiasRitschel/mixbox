@@ -44,7 +44,7 @@ MathJax.Hub.Config({
 </p>
 <p style="text-align:center">
 \[
-	\hat z(t) = \int_{-\infty}^t \hat \alpha(t - s) x(s) \, \mathrm ds = \sum_{m=0}^M c_m \int_{-\infty}^t \ell_m(t - s) x(s) \, \mathrm s = \sum_{m=0}^M c_m z_m(t),
+	\hat z(t) = \int_{-\infty}^t \hat \alpha(t - s) x(s) \, \mathrm ds = \sum_{m=0}^M c_m \int_{-\infty}^t \ell_m(t - s) x(s) \, \mathrm ds = \sum_{m=0}^M c_m z_m(t),
 \]
 </p><p>where we have introduced
 </p>
@@ -83,7 +83,7 @@ MathJax.Hub.Config({
 <p style="text-align:center">
 \[
 	\begin{align*}
-		z_m(t_0) &amp;= \int_{-\infty}^{t_0} \ell_m(t_0 - s) x(s), \\
+		z_m(t_0) &amp;= \int_{-\infty}^{t_0} \ell_m(t_0 - s) x(s) \mathrm ds, \\
 		\dot z_0(t) &amp;= a (x(t) - z_0(t)), &amp; t &amp;\in [t_0, t_f], \\
 		\dot z_m(t) &amp;= a (z_{m-1}(t) - z_m(t)), &amp; t &amp;\in [t_0, t_f], &amp; m = 1, \ldots, M.
 	\end{align*}
@@ -92,7 +92,7 @@ MathJax.Hub.Config({
 </p>
 <div id="footer">
 <div id="footer-text">
-Page generated 2025-09-29 17:15:08 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+Page generated 2025-09-30 09:11:27 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
 (<a href="./src/convolutions.jemdoc">source</a>)
 </div>
 </div>
