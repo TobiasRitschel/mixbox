@@ -37,7 +37,7 @@ The toolbox is composed of several GitHub repositories. However, not all functio
 	.. [https://github.com/TobiasRitschel/mixbox-beta mixbox-beta] toolbox
 . Approximate delay differential equations (DDEs) with distributed time delays by ordinary differential equations (ODEs)
 	.. [https://github.com/TobiasRitschel/mixbox-erlang-dde mixbox-erlang-dde] toolbox.
-	.. mixbox-beta-dde: Not implemented yet.
+	.. [https://github.com/TobiasRitschel/mixbox-beta-dde mixbox-beta-dde] toolbox.
 . Approximate the solution to stochastic differential equations (SDEs) with mixture approximations
 	.. mixbox-gauss-sde: Not implemented yet.
 	.. mixbox-erlang-sde: Not implemented yet.
