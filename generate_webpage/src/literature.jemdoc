@@ -1,0 +1,30 @@
+# jemdoc: menu{MENU}{literature.html}, showsource
+= Literature
+
+The below literature is only a subset of the research papers and books that are relevant to the topic. If you are familiar with a reference that you think is important to the topic of mixture approximations, please add it to the below list.
+
+== Distributed time delays (mixture approximations)
+
+T.K.S. Ritschel, 2025. On Erlang Mixture Approximations for Differential Equations with Distributed Time Delays. arXiv: [http://arxiv.org/abs/2502.12984 2502.12984]. DOI (code): [https://doi.org/10.5281/zenodo.15685296 10.5281/zenodo.15685296]. In submission.
+
+N. Guglielmi and E. Hairer, 2025. Applying stiff integrators for ordinary differential equations and delay differential equations to problems with distributed delays, SIAM Journal on Scientific Computing, 47, pp. A102–A123. DOI: [https://doi.org/10.1137/24M1632413 10.1137/24M1632413].
+
+T.K.S. Ritschel, J. Wyller, 2025. An Algorithm for Distributed Time Delay Identification without A Priori Knowledge of the Kernel. Automatica 178, pp. 112382. arXiv: [https://arxiv.org/abs/2405.07328 2405.07328]. DOI (code): [https://doi.org/10.5281/zenodo.10001583 10.5281\/zenodo.10001583]. DOI: [https://doi.org/10.1016/j.automatica.2025.112382 10.1016/j.automatica.2025.112382].
+
+== Distributed time delays (linear chain trick)
+
+H. Smith, 2011. An introduction to delay differential equations with applications to the life sciences, vol. 57 of Texts in Applied Mathematics, Springer. DOI: [https://doi.org/10.1007/978-1-4419-7646-8 10.1007/978-1-4419-7646-8].
+
+N. MacDonald, 1978. Time lags in biological models, vol. 27 of Lecture Notes in Biomathematics, Springer. DOI: [https://doi.org/10.1007/978-3-642-93107-9 10.1007/978-3-642-93107-9].
+
+A. Ponosov, A. Shindiapin, and J. J. Miguel, 2002. The W-transform links delay and ordinary differential equations, Functional Differential Equations, 9, pp. 437–469.
+
+== Functional differential equations
+
+J. K. Hale and S. M. V. Lunel, 1993. Introduction to functional differential equations, vol. 99 of Applied Mathematical Sciences, Springer. DOI: [https://doi.org/10.1007/978-1-4612-4342-7 10.1007/978-1-4612-4342-7].
+
+V. Kolmanovskii and A. Myshkis, 1992. Applied theory of functional differential equations, vol. 85 of Mathematics and Its Applications, Springer. DOI: [https://doi.org/10.1007/978-94-015-8084-7 10.1007/978-94-015-8084-7].
+
+== Convergence of mixture approximations
+
+J. Korevaar, 1968. Mathematical methods, vol. 1, Academic Press.
