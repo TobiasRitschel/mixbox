@@ -20,7 +20,7 @@ where the auxiliary memory states, $z_m$ for $m = 0, \ldots, M$, are obtained as
 	\end{align*}
 \)
 
-To summarize, delay differential equations with distributed time delays in the top can be approximated by the system
+To summarize, delay differential equations with distributed time delays can be approximated by the system
 \(
 	\begin{align*}
 		\dot{\hat x}(t) &= f(\hat x(t), \hat z(t)), & t &\geq t_0, \\
