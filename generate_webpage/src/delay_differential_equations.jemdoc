@@ -1,0 +1,31 @@
+# jemdoc: menu{MENU}{delay_differential_equations.html}, showsource
+= Delay differential equations with distributed time delays
+
+Consider delay differential equations with distributed time delays in the form
+\(
+	\dot x(t) = f(x(t), z(t)), \quad z(t) = \int_{-\infty}^t \alpha(t - s) x(s) \, \mathrm ds, \quad t \geq t_0,
+\)
+where $x$ is the state, $z$ is the memory state, $f$ is the right-hand side function, and $\alpha$ is a kernel or memory function that specifies the weight of states in the past (relative to the current time, $t$).
+
+Essentially, this system can be approximated by [/Convolution.html approximating the convolution] in the definition of the memory state. Specifically, we can approximate the kernel, $\alpha$, with a Erlang mixture approximation in order to approximate the memory state, $z$, by the weighted sum
+\(
+	\hat z(t) = \sum_{m=0}^M c_m z_m(t),
+\)
+where the auxiliary memory states, $z_m$ for $m = 0, \ldots, M$, are obtained as the solution to the initial value problem
+\(
+	\begin{align*}
+		z_m(t_0) &= \int_{-\infty}^{t_0} \ell_m(t_0 - s) x(s) \, \mathrm ds, \\
+		\dot z_0(t) &= a (x(t) - z_0(t)), & t &\geq t_0, \\
+		\dot z_m(t) &= a (z_{m-1}(t) - z_m(t)), & t &\geq t_0, & m = 1, \ldots, M.
+	\end{align*}
+\)
+
+To summarize, delay differential equations with distributed time delays in the top can be approximated by the system
+\(
+	\begin{align*}
+		\dot{\hat x}(t) &= f(\hat x(t), \hat z(t)), & t &\geq t_0, \\
+		\dot z_0(t) &= a (x(t) - z_0(t)), & t &\geq t_0, \\
+		\dot z_m(t) &= a (z_{m-1}(t) - z_m(t)), & t &\geq t_0, & m &= 1, \ldots, M,
+	\end{align*}
+\)
+where the coefficients, $\{c_m\}_{m=0}^M$, and the rate parameter, $a$, are determined by the Erlang mixture approximation of the kernel, $\alpha$.

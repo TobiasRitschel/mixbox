@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<title>Delay differential equations with distributed time delays</title>
+<!-- MathJax -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async>
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+	  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<!-- End MathJax -->
+</head>
+<body>
+<table summary="Table for page layout." id="tlayout">
+<tr valign="top">
+<td id="layout-menu">
+<div class="menu-category">Mixture approximations</div>
+<div class="menu-item"><a href="index.html">Home</a></div>
+<div class="menu-item"><a href="gauss.html">Gauss&nbsp;approximations</a></div>
+<div class="menu-item"><a href="erlang.html">Erlang&nbsp;approximations</a></div>
+<div class="menu-item"><a href="beta.html">Beta&nbsp;approximations</a></div>
+<div class="menu-category">Static problems</div>
+<div class="menu-item"><a href="convolutions.html">Convolutions</a></div>
+<div class="menu-category">Dynamical problems</div>
+<div class="menu-item"><a href="delay_differential_equations.html" class="current">Delay&nbsp;differential&nbsp;equations</a></div>
+<div class="menu-category">Resources</div>
+<div class="menu-item"><a href="research_papers.html">Research&nbsp;papers</a></div>
+<div class="menu-category">Contact</div>
+<div class="menu-item"><a href="ritschel.html">Tobias&nbsp;K.&nbsp;S.&nbsp;Ritschel</a></div>
+</td>
+<td id="layout-content">
+<div id="toptitle">
+<h1>Delay differential equations with distributed time delays</h1>
+</div>
+<p>Consider delay differential equations with distributed time delays in the form
+</p>
+<p style="text-align:center">
+\[
+	\dot x(t) = f(x(t), z(t)), \quad z(t) = \int_{-\infty}^t \alpha(t - s) x(s) \, \mathrm ds, \quad t \geq t_0,
+\]
+</p><p>where \(x\) is the state, \(z\) is the memory state, \(f\) is the right-hand side function, and \(\alpha\) is a kernel or memory function that specifies the weight of states in the past (relative to the current time, \(t\)).
+</p>
+<p>Essentially, this system can be approximated by <a href="Convolution.html">approximating the convolution</a> in the definition of the memory state. Specifically, we can approximate the kernel, \(\alpha\), with a Erlang mixture approximation in order to approximate the memory state, \(z\), by the weighted sum
+</p>
+<p style="text-align:center">
+\[
+	\hat z(t) = \sum_{m=0}^M c_m z_m(t),
+\]
+</p><p>where the auxiliary memory states, \(z_m\) for \(m = 0, \ldots, M\), are obtained as the solution to the initial value problem
+</p>
+<p style="text-align:center">
+\[
+	\begin{align*}
+		z_m(t_0) &amp;= \int_{-\infty}^{t_0} \ell_m(t_0 - s) x(s) \, \mathrm ds, \\
+		\dot z_0(t) &amp;= a (x(t) - z_0(t)), &amp; t &amp;\geq t_0, \\
+		\dot z_m(t) &amp;= a (z_{m-1}(t) - z_m(t)), &amp; t &amp;\geq t_0, &amp; m = 1, \ldots, M.
+	\end{align*}
+\]
+</p><p>To summarize, delay differential equations with distributed time delays in the top can be approximated by the system
+</p>
+<p style="text-align:center">
+\[
+	\begin{align*}
+		\dot{\hat x}(t) &amp;= f(\hat x(t), \hat z(t)), &amp; t &amp;\geq t_0, \\
+		\dot z_0(t) &amp;= a (x(t) - z_0(t)), &amp; t &amp;\geq t_0, \\
+		\dot z_m(t) &amp;= a (z_{m-1}(t) - z_m(t)), &amp; t &amp;\geq t_0, &amp; m &amp;= 1, \ldots, M,
+	\end{align*}
+\]
+</p><p>where the coefficients, \(\{c_m\}_{m=0}^M\), and the rate parameter, \(a\), are determined by the Erlang mixture approximation of the kernel, \(\alpha\).
+</p>
+<div id="footer">
+<div id="footer-text">
+Page generated 2025-10-15 16:40:57 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+(<a href="./src/delay_differential_equations.jemdoc">source</a>)
+</div>
+</div>
+</td>
+</tr>
+</table>
+</body>
+</html>
