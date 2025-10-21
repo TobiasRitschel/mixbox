@@ -5,7 +5,8 @@ USER 		= tksr
 MAKEFILE  	= ./makefile
 SOURCEDIR 	= ./src
 HTMLDIR   	= ./html
-EQDIR       = ./eqs
+PDFDIR 		= ./pdf
+EQDIR       	= ./eqs
 SOURCE 		= $(wildcard $(SOURCEDIR)/*.jemdoc)
 TARGET 		= $(addprefix $(HTMLDIR)/, $(notdir $(SOURCE:.jemdoc=.html)))
 STYLE  		= css/jemdoc.css
@@ -21,7 +22,7 @@ WEBSITE 	= \
 all: $(WEBSITE) $(TARGET)
 
 $(WEBSITE): $(TARGET)
-	@cp -r $(TARGET) $(STYLE) $(EQDIR) ..
+	@cp -r $(TARGET) $(STYLE) $(PDFDIR) $(EQDIR) ..
 
 $(TARGET): $(STYLE) $(MENU) $(SOURCE) $(MAKEFILE)
 	@jemdoc.py -c mysite.conf $(SOURCE)

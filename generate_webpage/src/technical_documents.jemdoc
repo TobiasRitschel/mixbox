@@ -1,0 +1,5 @@
+# jemdoc: menu{MENU}{technical_documents.html}, showsource
+= Technical documents
+
+:{Slide deck: Mixture approximations and delay differential equations with distributed time delays}
+These slides introduce the three basic types of mixture approximations (Gauss, Erlang, and beta) and demonstrate how Erlang mixture approximations can be used to approximate delay differential equations with distributed time delays by ordinary differential equations. [./pdf/mixture_approximations_and_dddes_2025.pdf Link].
