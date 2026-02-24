@@ -7,7 +7,7 @@ Consider delay differential equations with distributed time delays in the form
 \)
 where $x$ is the state, $z$ is the memory state, $f$ is the right-hand side function, and $\alpha$ is a kernel or memory function that specifies the weight of states in the past (relative to the current time, $t$).
 
-Essentially, this system can be approximated by [/Convolution.html approximating the convolution] in the definition of the memory state. Specifically, we can approximate the kernel, $\alpha$, with a Erlang mixture approximation in order to approximate the memory state, $z$, by the weighted sum
+Essentially, this system can be approximated by [/convolutions.html approximating the convolution] in the definition of the memory state. Specifically, we can approximate the kernel, $\alpha$, with a Erlang mixture approximation in order to approximate the memory state, $z$, by the weighted sum
 \(
 	\hat z(t) = \sum_{m=0}^M c_m z_m(t),
 \)
