@@ -1,44 +1,129 @@
 # jemdoc: menu{MENU}{convolutions.html}, showsource
-= Convolutions
+= Convolutions (finite)
 
-[erlang.html Erlang mixture approximations] can be used together with the linear chain trick to approximate convolutions in the form
+Both [beta.html beta mixture approximations] and [erlang.html Erlang mixture approximations] can be used together with the linear chain trick to approximate convolutions in the form
 \(
-	z(t) = \int_{-\infty}^t \alpha(t - s) x(s) \, \mathrm ds
+	z(t) = \int_{t-h}^t \alpha(t - s) x(s) \, \mathrm ds
 \)
-by a set of ordinary differential equations. Substitute the approximation
+by a set of ordinary differential equations.
+
+== Beta mixture approximations
+The beta basis functions for the domain $\mathcal D = [0, h]$ are given by
 \(
-	\hat z(t) = \int_{-\infty}^t \hat \alpha(t - s) x(s) \, \mathrm ds = \sum_{m=0}^M c_m \int_{-\infty}^t \ell_m(t - s) x(s) \, \mathrm ds = \sum_{m=0}^M c_m z_m(t),
+	\ell_m(t) = b_m t^m (h - t)^{M-m}, b_m = \frac{1}{h^{M+1}} \frac{(M+1)!}{m! (M-m)!}.
+\)
+Before substituting the beta mixture approximation, we introduce the auxiliary basis functions
+\(
+	B_{m, k}(t) = b_{m, k} \frac{1}{h^{m+k+1}} \frac{(m+k+1)!}{m! k!}.
+\)
+Note that $\ell_m = B_{m, M-m}$. Next, we substitute the approximation into the convolution
+\(
+	\hat z(t) = \int_{t-h}^t \hat \alpha(t - s) x(s) \, \mathrm ds = \sum_{m=0}^M c_m \int_{t-h}^t \ell_m(t - s) x(s) \, \mathrm ds = \sum_{m=0}^M c_m \int_{t-h}^t B_{m, M-m}(t - s) x(s) \, \mathrm ds = \sum_{m=0}^M c_m z_{m, k}(t),
 \)
 where we have introduced
 \(
-	z_m(t) = \int_{-\infty}^t \ell_m(t - s) x(s) \, \mathrm ds.
+	z_{m, k}(t) = \int_{t-h}^t B_{m, k}(t - s) x(s) \, \mathrm ds.
 \)
-Next, we exploit 1) that $\ell_0(0) = a$ and $\ell_m(0) = 0$ for $m > 0$, and 2) the recursive nature of the derivatives of the Erlang basis functions:
+We derive a recursion for the normalization factor in the auxiliary basis functions:
 \(
-	\dot \ell_m(t) =
-	\begin{cases}
-		-a \ell_0(t), & m = 0, \\
-		a (\ell_{m-1}(t) - \ell_m(t)), & m > 0.
-	\end{cases}
+\begin{align*}
+	b_{m, k} = \frac{1}{h^{m+k+1}} \frac{(m+k+1)!}{m!}{k!} = \frac{m+k+1}{m h} \frac{(m+k)!}{(m-1)! k!} = \frac{m+k+1}{m h} b_{m-1, k}, \\
+	b_{m, k} = \frac{1}{h^{m+k+1}} \frac{(m+k+1)!}{m!}{k!} = \frac{m+k+1}{k h} \frac{(m+k)!}{m! (k-1)!} = \frac{m+k+1}{k h} b_{m, k-1}.
+\end{align*}
 \)
-We differentiate the expression for $z_m$ to obtain a set of linear differential equations based on this recursion,
+We use these recursions to obtain the derivatives of the auxiliary basis functions
 \(
-	\dot z_m(t) = \ell_m(0) x(t) + \int_{-\infty}^t \dot \ell_m(t - s) x(s) \,\mathrm ds =
+\begin{align*}
+	\dot B_{m, k}(t) &= m b_{m, k} t^{m-1} (h - t)^k - k b_{m, k} t^m (h - t)^{k-1} = \frac{m+k+1}{h} b_{m-1, k} t^{m-1} (h - t)^k - \frac{m+k+1}{h} b_{m, k-1} t^m (h - t)^{k-1} = \frac{m+k+1}{h} (B_{m-1, k}(t) - B_{m, k-1}(t)), & m, k &\geq 1, \\
+	\dot B_{m, 0}(t) &= m b_{m, 0} t^{m-1} = \frac{m+1}{h} b_{m-1, 0} t^{m-1} = \frac{m+1}{h} B_{m-1, 0}(t), & m &\geq 1, \\
+	\dot B_{0, k}(t) &= -k b_{0, k} (h - t)^{k-1} = -\frac{k+1}{h} b_{0, k-1} (h - t)^{k-1} = -\frac{k+1}{h} B_{0, k-1}(t), & k &\geq 1, \\
+	\dot B_{0, 0}(t) &= 0.
+\end{align*}
+\)
+Furthermore, we exploit that
+\(
+\begin{align*}
+	B_{m, k}(0) &=
 	\begin{cases}
-		a (x(t) - z_0(t)), & m = 0, \\
-		a (z_{m-1}(t) - z_m(t)), & m > 0.
+		\frac{k+1}{h}, & m = 0, \\
+		0, & \mathrm{otherwise},
+	\end{cases}, &
+	B_{m, k}(h) &=
+	\begin{cases}
+		\frac{m+1}{h}, & k = 0, \\
+		0, & \mathrm{otherwise},
 	\end{cases}
+\end{align*}
+\)
+Finally, we use Leibniz' integral rule to derive differential equations for the auxiliary memory states:
+\(
+	\dot z_{m, k}(t) = B_{m, k}(0) x(t) - B_{m, k}(h) x(t - h) + \int_{t-h}^t \dot B_{m, k}(t - s) x(s) \, \mathrm ds
+\)
+We specialize this depending on $m$ and $k$:
+\(
+\begin{align*}
+	\dot z_{m, k}(t) &= \frac{m+k+1}{h} \left(\int_{t-h}^t B_{m-1, k}(t - s) x(s) \, \mathrm ds - \int_{t-h}^t B_{m, k-1}(t - s) x(s) \, \mathrm ds\right) = \frac{m+k+1}{h} (z_{m-1, k}(t) - z_{m, k-1}(t)), & m,k &\geq 1, \\
+	\dot z_{m, 0}(t) &= -\frac{m+1}{h} x(t - h) + \frac{m+1}{h} \int_{t-h}^t B_{m-1, 0}(t - s) x(s) \, \mathrm ds = \frac{m+1}{h}(z_{m-1, 0}(t) - x(t - h)), & m &\geq 1, \\
+	\dot z_{0, k}(t) &= \frac{k+1}{h} x(t) - \frac{k+1}{h} \int_{t - h} B_{0, k-1}(t - s) x(s) \, \mathrm ds = \frac{k+1}{h} (x(t) - z_{0, k-1}(t)), & k &\geq 1, \\
+	\dot z_{0, 0}(t) &= \frac{1}{h} (x(t) - x(t - h)).
+\end{align*}
 \)
 To summarize, the convolution $z(t_f)$ can be approximated by $\hat z(t_f)$ given by
 \(
-	\hat z(t_f) = \sum_{m=0}^M c_m z_m(t_f),
+	\hat z(t_f) = \sum_{m=0}^M c_m z_{m, M-m}(t_f),
 \)
-where the auxiliary memory states, $z_m$ for $m = 0, \ldots, M$, are obtained as the solution to the initial value problem
+where the auxiliary memory states are obtained as the solution to the initial value problem
 \(
-	\begin{align*}
-		z_m(t_0) &= \int_{-\infty}^{t_0} \ell_m(t_0 - s) x(s) \, \mathrm ds, \\
-		\dot z_0(t) &= a (x(t) - z_0(t)), & t &\in [t_0, t_f], \\
-		\dot z_m(t) &= a (z_{m-1}(t) - z_m(t)), & t &\in [t_0, t_f], & m = 1, \ldots, M.
-	\end{align*}
+\begin{align*}
+	z_{m, k}(t_0) &= \int_{t_0-h}^{t_0} \ell_m(t_0 - s) x(s) \, \mathrm ds, \\
+	\dot z_{m, k}(t) &= \frac{m+k+1}{h} (z_{m-1, k}(t) - z_{m, k-1}(t)), & m,k &\geq 1, & t &\in [t_0, t_f], \\
+	\dot z_{m, 0}(t) &= \frac{m+1}{h}(z_{m-1, 0}(t) - x(t - h)), & m &\geq 1, & t &\in [t_0, t_f], \\
+	\dot z_{0, k}(t) &= \frac{k+1}{h} (x(t) - z_{0, k-1}(t)), & k &\geq 1, & t &\in [t_0, t_f], \\
+	\dot z_{0, 0}(t) &= \frac{1}{h} (x(t) - x(t - h)), &&& t &\in [t_0, t_f].
+	
+\end{align*}
 \)
-This approach is mainly useful if $x$ is constant in the interval $(-\infty, t_0]$ for some given value of $t_0$, or if $z_m(t_0)$ can be evaluated analytically. In particular, this approach is used to approximate delay differential equations by ordinary differential equations.
+Note that this system can be reduced by exploiting the relation between Bernstein polynomials and Legendre polynomials (Farouki, 2012).
+
+#== Erlang mixture approximations
+#
+#Substitute the approximation
+#\(
+#	\hat z(t) = \int_{-\infty}^t \hat \alpha(t - s) x(s) \, \mathrm ds = \sum_{m=0}^M c_m \int_{-\infty}^t \ell_m(t - s) x(s) \, \mathrm ds = \sum_{m=0}^M c_m z_m(t),
+#\)
+#where we have introduced
+#\(
+#	z_m(t) = \int_{-\infty}^t \ell_m(t - s) x(s) \, \mathrm ds.
+#\)
+#Next, we exploit 1) that $\ell_0(0) = a$ and $\ell_m(0) = 0$ for $m > 0$, and 2) the recursive nature of the derivatives of the Erlang basis functions:
+#\(
+#	\dot \ell_m(t) =
+#	\begin{cases}
+#		-a \ell_0(t), & m = 0, \\
+#		a (\ell_{m-1}(t) - \ell_m(t)), & m > 0.
+#	\end{cases}
+#\)
+#We differentiate the expression for $z_m$ to obtain a set of linear differential equations based on this recursion,
+#\(
+#	\dot z_m(t) = \ell_m(0) x(t) + \int_{-\infty}^t \dot \ell_m(t - s) x(s) \,\mathrm ds =
+#	\begin{cases}
+#		a (x(t) - z_0(t)), & m = 0, \\
+#		a (z_{m-1}(t) - z_m(t)), & m > 0.
+#	\end{cases}
+#\)
+#To summarize, the convolution $z(t_f)$ can be approximated by $\hat z(t_f)$ given by
+#\(
+#	\hat z(t_f) = \sum_{m=0}^M c_m z_m(t_f),
+#\)
+#where the auxiliary memory states, $z_m$ for $m = 0, \ldots, M$, are obtained as the solution to the initial value problem
+#\(
+#	\begin{align*}
+#		z_m(t_0) &= \int_{-\infty}^{t_0} \ell_m(t_0 - s) x(s) \, \mathrm ds, \\
+#		\dot z_0(t) &= a (x(t) - z_0(t)), & t &\in [t_0, t_f], \\
+#		\dot z_m(t) &= a (z_{m-1}(t) - z_m(t)), & t &\in [t_0, t_f], & m = 1, \ldots, M.
+#	\end{align*}
+#\)
+#This approach is mainly useful if $x$ is constant in the interval $(-\infty, t_0]$ for some given value of $t_0$, or if $z_m(t_0)$ can be evaluated analytically. In particular, this approach is used to approximate delay differential equations by ordinary differential equations.
+
+== References
+Farouki, R.T., 2012. The Bernstein polynomial basis: A centennial retrospective. Computer Aided Geometric Design 29, pp. 379–419. DOI: https://doi.org/10.1016/j.cagd.2012.03.001.

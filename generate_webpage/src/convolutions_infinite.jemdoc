@@ -1,5 +1,5 @@
 # jemdoc: menu{MENU}{convolutions.html}, showsource
-= Convolutions
+= Convolutions (finite)
 
 [erlang.html Erlang mixture approximations] can be used together with the linear chain trick to approximate convolutions in the form
 \(
