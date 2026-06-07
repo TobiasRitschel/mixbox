@@ -1,14 +1,15 @@
 Mixture approximations
-  Home                  [index.html]
-  Gauss approximations  [gauss.html]
-  Erlang approximations [erlang.html]
-  Beta approximations   [beta.html]
+  Home                  	[index.html]
+  Gauss approximations  	[gauss.html]
+  Erlang approximations 	[erlang.html]
+  Beta approximations   	[beta.html]
 Static problems
-  Convolutions          [convolutions.html]
+  Convolutions (infinite)       [convolutions_infinite.html]
+  Convolutions (finite) 	[convolutions_finite.html]
 Dynamical problems
-  Delay differential equations [delay_differential_equations.html]
+  Delay differential equations 	[delay_differential_equations.html]
 Resources
-  Technical documents   [technical_documents.html]
-  Literature 		[literature.html]
+  Technical documents   	[technical_documents.html]
+  Literature 			[literature.html]
 Contact
-  Tobias K. S. Ritschel [ritschel.html]
+  Tobias K. S. Ritschel 	[ritschel.html]
